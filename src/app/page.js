@@ -24,7 +24,10 @@ export default function Home() {
 
 
   // Reading stored playerName or setting empty
-  let playerName = localStorage.getItem("playerName") || ""
+  let playerName = ''
+  if (typeof window !== 'undefined') {
+    let playerName = localStorage.getItem("playerName") || ''
+  }
 
   // Using cards value to show images and handle unique ids
   let cards = [];
