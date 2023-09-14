@@ -25,3 +25,42 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.card {
+  background-color: transparent;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.card__card-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card .revealed {
+  background-color: transparent;
+}
+
+
+.card__card-inner.revealed {
+  transform: rotateY(180deg);
+}
+
+.card__card-front, .card__card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card__card-front img, .card__card-back img {
+  border: 2px solid black;
+}
+
+.card__card-front {
+  background-color: transparent;
+}
+
+.card__card-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+}
